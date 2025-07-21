@@ -10,14 +10,15 @@
     <div class="card">
         <div class="card-body">
             <p><strong>Nombre:</strong> {{ $veterinario->nombre }}</p>
-            <p><strong>Email:</strong> {{ $veterinario->email }}</p>
+            <p><strong>Correo:</strong> {{ $veterinario->correo }}</p>
             <p><strong>Teléfono:</strong> {{ $veterinario->telefono ?? 'No especificado' }}</p>
             <p><strong>Dirección:</strong> {{ $veterinario->direccion ?? 'No especificado' }}</p>
-            <p><strong>Especialidad:</strong> {{ $veterinario->especialidad }}</p>
-            <p><strong>Latitud:</strong> {{ $veterinario->latitud ?? 'No especificado' }}</p>
-            <p><strong>Longitud:</strong> {{ $veterinario->longitud ?? 'No especificado' }}</p>
-            <p><strong>Descripción:</strong> {{ $veterinario->descripcion ?? 'No especificado' }}</p>
-            <a href="{{ route('veterinarios.index') }}" class="btn btn-primary">Volver</a>
+            <p><strong>Coordenadas:</strong> {{ $veterinario->latitud ? "($veterinario->latitud, $veterinario->longitud)" : 'No especificadas' }}</p>
+            <p><strong>Especialidades:</strong> {{ $veterinario->especialidades->pluck('nombre')->join(', ') }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="{{ route('veterinarios.edit', $veterinario) }}" class="btn btn-warning">Editar</a>
+            <a href="{{ route('veterinarios.index') }}" class="btn btn-secondary">Volver</a>
         </div>
     </div>
 @stop
