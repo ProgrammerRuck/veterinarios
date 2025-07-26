@@ -339,6 +339,11 @@ return [
             'icon' => 'fas fa-user-md',
         ],
         [
+            'text' => 'Especialidades',
+            'url'  => 'especialidades',
+            'icon' => 'fas fa-stethoscope',
+        ],
+        [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

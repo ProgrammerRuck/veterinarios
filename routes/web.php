@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VeterinarioController;
+use App\Http\Controllers\EspecialidadController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('veterinarios', VeterinarioController::class);
+
+Route::resource('especialidades', EspecialidadController::class);
 
 require __DIR__.'/auth.php';
