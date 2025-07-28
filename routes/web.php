@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\VeterinarioController;
 use App\Http\Controllers\EspecialidadController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,5 +23,9 @@ Route::middleware('auth')->group(function () {
 Route::resource('veterinarios', VeterinarioController::class);
 
 Route::resource('especialidades', EspecialidadController::class);
+
+Route::get('/map', [MapController::class, 'index'])->name('map.index');
+Route::get('/veterinarians/json', [MapController::class, 'getVeterinarians'])->name('veterinarians.json');
+Route::get('/nearby-veterinarians', [MapController::class, 'getNearbyVeterinarians'])->name('nearby.veterinarians');
 
 require __DIR__.'/auth.php';

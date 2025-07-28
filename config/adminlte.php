@@ -313,26 +313,14 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscar',
         ],
         [
             'text' => 'blog',
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+        ['header' => 'SISTEMA'],
         [
             'text' => 'Veterinarios',
             'url' => 'veterinarios',
@@ -342,6 +330,11 @@ return [
             'text' => 'Especialidades',
             'url'  => 'especialidades',
             'icon' => 'fas fa-stethoscope',
+        ],
+                [
+            'text' => 'Mapa Interactivo',
+            'url'  => 'map',
+            'icon' => 'fas fa-map',
         ],
         [
             'text' => 'change_password',

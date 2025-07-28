@@ -43,7 +43,16 @@ class EspecialidadController extends Controller
 
     public function update(Request $request, Especialidad $especialidade)
     {
+        $request->validate([
+            'nombre' => 'required|string|max:255|unique:especialidades,nombre,' . $especialidade->id,
+        ], [
+            'nombre.required' => 'El nombre de la especialidad es obligatorio.',
+            'nombre.unique' => 'Esta especialidad ya existe.',
+        ]);
 
+        $especialidade->update($request->only('nombre'));
+
+        return redirect()->route('especialidades.index')->with('exito', 'Especialidad actualizada con éxito.');
     }
 
     public function destroy(Especialidad $especialidade)
